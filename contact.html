@@ -17,7 +17,7 @@
       <a href="about.html">About Me</a>
       <a href="hobbies.html">Hobbies and Achievements</a>
       <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="active">Contact</a>
     </nav>
   </header>
 
@@ -25,20 +25,27 @@
     <h2>Let’s Connect</h2>
     <p>If you’d like to collaborate, ask a question, or just say hi — drop me a message below 👇</p>
 
-    <!-- Contact Form -->
-    <form id="contactForm">
+    <!-- ✅ Contact Form with Formspree -->
+    <form action="https://formspree.io/f/mdklwvjl" method="POST">
       <label for="name">Enter Your Name</label>
-      <input type="text" id="name" placeholder="Example: Sokanya" required>
+      <input type="text" name="name" id="name" placeholder="Example: Sokanya" required>
 
       <label for="email">Enter your Email</label>
-      <input type="email" id="email" placeholder="Example: mvunyiswasokanya@gmail.com" required>
+      <input type="email" name="email" id="email" placeholder="Example: mvunyiswasokanya@gmail.com" required>
 
       <label for="message">Message</label>
-      <textarea id="message" placeholder="Write your message here..." required></textarea>
+      <textarea name="message" id="message" placeholder="Write your message here..." required></textarea>
 
       <button type="submit">Send Message</button>
-       <a class="btn btn-ghost" href="mailto:mvunyiswasokanya@gmail.com?subject=Hello%20Sokanya">Email me</a>
     </form>
+
+    
+    <p id="formMessage"></p>
+
+
+    <!-- Optional direct email button -->
+    <a class="btn btn-ghost" href="mailto:mvunyiswasokanya@gmail.com?subject=Hello%20Sokanya">📧 Email me directly</a>
+
     <p id="formMessage" class="success"></p>
 
     <!-- Social Links -->

@@ -42,3 +42,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+  const formMessage = document.getElementById("formMessage");
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      formMessage.textContent = "✅ Thank you! Your message has been sent.";
+      form.reset();
+    } else {
+      formMessage.textContent = "❌ Oops! Something went wrong. Please try again.";
+    }
+  });
+});
